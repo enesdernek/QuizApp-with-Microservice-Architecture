@@ -4,11 +4,16 @@ import java.util.List;
 
 import com.enesdernek.question_service.dto.QuestionDto;
 import com.enesdernek.question_service.dto.QuestionDtoIU;
+import com.enesdernek.question_service.model.Response;
 
 public interface IQuestionService {
 	
 	public QuestionDto add(QuestionDtoIU questionDtoIU);
 	
-	public List<Long> generateRandomQuestions(int questionNumber);
+	public List<Long> getRandomQuestionsForQuiz(int questionNumber);
+	
+	public List<QuestionDto> getQuestionsById(List<Long>questionIds);
+	
+	public Integer getScore(List<Response>responses);
 
 }
