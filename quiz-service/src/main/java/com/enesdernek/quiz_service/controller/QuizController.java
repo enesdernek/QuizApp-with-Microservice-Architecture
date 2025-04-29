@@ -29,7 +29,7 @@ public class QuizController {
 		return new ResponseEntity<String>(this.quizService.createQuiz(quizDtoIU),HttpStatus.CREATED);
 	}
 	
-	@GetMapping("{id}")
+	@GetMapping("/{id}")
 	public ResponseEntity<List<QuestionDto>> getQuizQuestions(@PathVariable Long id){
 		return new ResponseEntity<List<QuestionDto>>(this.quizService.getQuizQuestions(id),HttpStatus.OK);
 	}
