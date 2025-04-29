@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import com.enesdernek.question_service.dto.QuestionDto;
 import com.enesdernek.question_service.dto.QuestionDtoIU;
 import com.enesdernek.question_service.model.Question;
-import com.enesdernek.question_service.model.Response;
 import com.enesdernek.question_service.repository.QuestionRepository;
 import com.enesdernek.question_service.service.abstracts.IQuestionService;
 
@@ -65,22 +64,6 @@ public class QuestionService implements IQuestionService{
 		return questionDtos;
 	}
 
-
-	@Override
-	public Integer getScore(List<Response> responses) {
-		
-		int rightAnswer = 0;
-		
-		for(Response response:responses) {
-			Question question = this.questionRepository.findById(response.getId()).get();
-			
-			if(response.getResponse().equals(question.getRightAnswer())) {
-				rightAnswer++;
-			}
-			
-		}
-		return rightAnswer;
-	}
 
 	
 

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.enesdernek.quiz_service.dto.QuestionDto;
-import com.enesdernek.quiz_service.dto.ResponseDto;
 
 @FeignClient("QUESTION-SERVICE")
 public interface QuizInterface {
@@ -18,10 +17,9 @@ public interface QuizInterface {
     public List<Long> getQuestionsForQuiz
             (@RequestParam Integer questionNumber );
 
-    @PostMapping("question/getQuestions")
-    public List<QuestionDto> getQuestionsFromId(@RequestBody List<Integer> questionIds);
+    @PostMapping("question/get-questions-by-id")
+    public List<QuestionDto> getQuestionsFromId(@RequestBody List<Long> questionIds);
 
-    @PostMapping("question/getScore")
-    public Integer getScore(@RequestBody List<ResponseDto> responses);
+
     
 }

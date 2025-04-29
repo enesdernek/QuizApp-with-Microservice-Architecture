@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.enesdernek.question_service.dto.QuestionDto;
 import com.enesdernek.question_service.dto.QuestionDtoIU;
-import com.enesdernek.question_service.model.Response;
 import com.enesdernek.question_service.service.concretes.QuestionService;
 
 @RestController
@@ -39,11 +38,7 @@ public class QuestionController {
 		return new ResponseEntity<List<QuestionDto>>(this.questionService.getQuestionsById(questionIds),HttpStatus.OK);
 	}
 	
-	@PostMapping("/get-score")
-	public ResponseEntity<Integer> getScore(@RequestBody List<Response> responses){
-		return new ResponseEntity<Integer>(this.questionService.getScore(responses),HttpStatus.OK);
-	}
-	
+
 	
 
 }

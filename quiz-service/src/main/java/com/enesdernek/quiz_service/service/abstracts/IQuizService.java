@@ -8,5 +8,7 @@ import com.enesdernek.quiz_service.dto.QuizDtoIU;
 public interface IQuizService {
 	
 	public String createQuiz(QuizDtoIU quizDtoIU);
-
+	
+	public List<QuestionDto> getQuizQuestions(Long id);
+	
 }

@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.enesdernek.question_service.dto.QuestionDto;
 import com.enesdernek.question_service.dto.QuestionDtoIU;
-import com.enesdernek.question_service.model.Response;
 
 public interface IQuestionService {
 	
@@ -14,6 +13,5 @@ public interface IQuestionService {
 	
 	public List<QuestionDto> getQuestionsById(List<Long>questionIds);
 	
-	public Integer getScore(List<Response>responses);
 
 }
